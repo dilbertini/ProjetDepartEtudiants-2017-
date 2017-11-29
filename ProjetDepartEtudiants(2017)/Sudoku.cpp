@@ -18,17 +18,20 @@ Sudoku::Sudoku(ifstream & in, ostream & out)
 {
 	M_.SetNbLignes(ORDRE);
 	M_.SetNbColonnes(ORDRE);
+	string ligne;
 	for (int i = 0; i < ORDRE; ++i)
 	{
+		getline(in, ligne);
 		for (int j = 0; j < ORDRE; ++j)
 		{
-			if ()
+			if (ligne[j] == '*')
 			{
-				M_[i][j] = ;
+				M_[i][j] = 0;
 			}
 			else
 			{
-				M_[i][j] = 0;
+				//probleme
+				M_[i][j] = ligne[j];
 			}
 		}
 	}
